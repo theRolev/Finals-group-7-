@@ -1,0 +1,111 @@
+.box {
+    display: grid;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+    "titlea titlea titlea . . shuffle prev play play next repeat . . . . ."
+    "artista artista heart heart . shuffle prev play play next repeat . . volume . ."
+    "datea datea . . . . . . . . . . . volume . .";
+    font-family: Arial;
+    background-color: rgba(180, 138, 190, 0.219);
+}
+
+.play {
+    grid-area: play;
+    justify-self: center;
+    align-self: end;
+    font-size: 3rem;
+    color: rgba(51, 51, 51, 0.096);
+}
+
+.pbar {
+    grid-area: 3/3/4/15;
+    justify-self: center;
+    align-self: center;
+}
+
+.prev {
+    grid-area: prev;
+    justify-self: end;
+    align-self: center;
+    font-size: 2.5rem;
+    color: rgba(51, 51, 51, 0.842);
+    padding-left: 5rem;
+}
+
+.shuffle {
+    grid-area: shuffle;
+    justify-self: center;
+    align-self: center;
+    font-size: 1.3rem;
+    color: rgba(51, 51, 51, 0.842);
+    padding-left: 5rem;
+}
+
+.next {
+    grid-area: next;
+    justify-self: start;
+    align-self: center;
+    font-size: 2.5rem;
+    color: rgba(51, 51, 51, 0.842);
+    padding-right: 5rem;
+}
+
+.repeat {
+    grid-area: repeat;
+    justify-self: center;
+    align-self: center;
+    font-size: 1rem;
+    color: rgba(51, 51, 51, 0.842);
+    padding-right: 5rem;
+}
+
+.volume {
+    grid-area: volume;
+    justify-self: center;
+    align-self: center;
+    font-size: 2rem;
+    color: rgba(51, 51, 51, 0.842);
+}
+
+.heart {
+    grid-area: heart;
+    justify-self: start;
+    align-self: end;
+    font-size: 1.4rem;
+    color: rgba(51, 51, 51, 0.842);
+    padding-left: 1.2rem;
+}
+
+.titlea {
+	font-weight: 600;
+	font-size: 0.9rem;
+    grid-area: titlea;
+    justify-self: start;
+    align-self: end;
+    padding-left: 2rem;
+    color: #333;
+}
+
+.datea {
+	font-weight: 400;
+	font-size: 0.6rem;
+    grid-area: datea;
+    justify-self: start;
+    align-self: start;
+    padding-left: 2rem;
+    color: rgba(51, 51, 51, 0.767);
+}
+
+.artista {
+	font-weight: 400;
+	font-size: 0.7rem;
+    grid-area: artista;
+    justify-self: start;
+    align-self: center;
+    padding-left: 2rem;
+    color: rgba(51, 51, 51, 0.87);
+}

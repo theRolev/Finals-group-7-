@@ -1,25 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+
+import Logo from "./components/Logo.js"
+import Search from "./components/Search.js"
+
+import Navbar from "./components/Navbar.js"
+
+import AlbumArt from "./components/AlbumArt.js"
+import PlayBack from "./components/PlayBack.js"
+import Recommended from "./components/Recommended.js"
+import Page2 from "./components/Page2.js"
+import Discover from "./components/Discover.js"
+import Trending from "./components/Trending.js"
+import Following from "./components/Following.js"
+
 import './App.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+          <Logo />
+          <Search />
+          <Navbar />
+          <AlbumArt />
+          <PlayBack />
+          <Recommended />
+          <Switch>
+            <Route path="/" exact component={Discover} /> 
+            <Route path="/Page2" component={Page2} />
+            <Route path="/Trending" component={Trending} />
+            <Route path="/Following" component={Following} />  
+          </Switch>
+      </div>  
+    </Router>
   );
 }
 

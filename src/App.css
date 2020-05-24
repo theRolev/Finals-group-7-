@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
+body {
+	background-color: rgba(247, 242, 241, 0.281);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+	display: grid;
+	grid-template-columns: 2fr 10fr 2fr;
+	grid-template-rows: 1fr 6.8fr 2.3fr 1.2fr;
+	height:100%;
+	width:100%;
+	position:fixed;
+	grid-template-areas:
+	"logo search search"
+	"navbar discover recommended"
+	"albumArt discover recommended"
+	"albumArt playback playback";
+	overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.recommended {
+	grid-area: recommended;
+	background-color:rgba(247, 241, 241, 0.904);
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.playback {
+	grid-area: playback;
+	border-top: 1px solid rgba(107, 40, 104, 0.349);	
 }
 
-.App-link {
-  color: #61dafb;
+.albumArt {
+	grid-area: albumArt;
+	min-width: 230px;
+	min-height: 230px;
+	border-right: 1px solid rgba(211, 186, 219, 0.281);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo {
+	grid-area: logo;
+}
+
+.search {
+	grid-area: search;
+}
+
+.navbar {
+	grid-area: navbar;
+}
+
+.discover {
+	grid-area: discover;
+	background-color:rgba(247, 241, 241, 0.904);
 }

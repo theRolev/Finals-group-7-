@@ -1,0 +1,56 @@
+.titler {
+	font-weight: 700;
+	font-size: 1.3rem;
+    grid-area: titler;
+    justify-self: start;
+    align-self: end;
+}
+
+.genrer {
+	font-weight: 600;
+	font-size: 1rem;
+    grid-area: genrer;
+    justify-self: end;
+    align-self: end;
+}
+
+.artr {
+    grid-area: 1/1/6/6;
+	border: 3px double #808080;
+    margin: 1rem;
+    min-width: 140px;
+	min-height: 140px;
+}
+
+.artistr {
+	font-weight: 500;
+	font-size: 1rem;
+    grid-area: artistr;
+    justify-self: start;
+    align-self: start;
+}
+
+.dater {
+	font-weight: 400;
+	font-size: 0.9rem;
+    grid-area: dater;
+    justify-self: end;
+    align-self: start;
+}
+
+.recons {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	margin:0;
+	padding:0;
+	grid-template-areas: 
+	"titler titler . . ."
+    "artistr artistr . . ."
+    ". . . . ."
+    ". . . . genrer"
+    ". . . . dater";
+    font-family: arial;
+}
+
+

@@ -1,0 +1,24 @@
+.discover {
+	display: grid;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	grid-gap: 4rem;
+	font-family: arial;
+}
+
+.discover > h1 {
+	height: 0px;
+	font-weight: 800;
+	font-size: 3rem;
+	padding-left: 7rem;
+	padding-bottom: 1rem;
+}
+
+.discover > div {
+	height: 280px;
+	background-color: rgba(134, 59, 134, 0.055);
+}
+
+
+
