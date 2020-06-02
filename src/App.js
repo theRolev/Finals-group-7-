@@ -13,6 +13,7 @@ import Page2 from "./components/Page2.js"
 import Discover from "./components/Discover.js"
 import Trending from "./components/Trending.js"
 import Following from "./components/Following.js"
+import Library from "./components/Library.js"
 
 import './App.css';
 
@@ -24,14 +25,15 @@ function App() {
           <Logo />
           <Search />
           <Navbar />
-          <AlbumArt />
+          <AlbumArt /> 
           <PlayBack />
           <Recommended />
           <Switch>
             <Route path="/" exact component={Discover} /> 
             <Route path="/Page2" component={Page2} />
             <Route path="/Trending" component={Trending} />
-            <Route path="/Following" component={Following} />  
+            <Route path="/Following" component={Following} /> 
+            <Route path="/Library" component={Library} /> 
           </Switch>
       </div>  
     </Router>

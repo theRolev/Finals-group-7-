@@ -18,7 +18,7 @@
 }
 
 .navch {
-	background-color:rgba(247, 241, 241, 0.904);
+	background-color:rgba(255, 255, 255);
 	display: flex;
 	align-items: center;
 	cursor: pointer;
@@ -30,11 +30,11 @@
 	font-family: Arial;
 }
 .navch:hover {
-	background-color: rgb(228, 209, 209);
+	background-color: rgb(247, 241, 241);
 }
 
 .navch1 {
-	background-color:rgba(247, 241, 241, 0.904);
+	background-color:rgba(255, 255, 255);
 	display: flex;
 	align-items: center;
 	cursor: pointer;
@@ -47,12 +47,12 @@
 	font-weight: 600;
 }
 .navch1:hover {
-	background-color: rgb(228, 209, 209);
+	background-color: rgb(247, 241, 241);
 }
 
 
 .navch2 {
-	background-color:rgba(247, 241, 241, 0.904);
+	background-color:rgba(255, 255, 255);
 	display: flex;
 	align-items: center;
 	cursor: pointer;
@@ -65,5 +65,5 @@
 	border-bottom: 1px solid #d9d9d9;;
 }
 .navch2:hover {
-	background-color: rgb(228, 209, 209);
+	background-color: rgb(247, 241, 241);
 }
