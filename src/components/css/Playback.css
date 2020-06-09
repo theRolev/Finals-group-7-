@@ -16,7 +16,7 @@
 .play {
     grid-area: play;
     justify-self: center;
-    align-self: end;
+    align-self: center;
     font-size: 3rem;
     color: rgba(51, 51, 51, 0.096);
 }

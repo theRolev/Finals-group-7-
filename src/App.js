@@ -14,6 +14,8 @@ import Discover from "./components/Discover.js"
 import Trending from "./components/Trending.js"
 import Following from "./components/Following.js"
 import Library from "./components/Library.js"
+import Uploads from "./components/Uploads.js"
+import Upload from "./components/Upload.js"
 
 import './App.css';
 
@@ -34,6 +36,8 @@ function App() {
             <Route path="/Trending" component={Trending} />
             <Route path="/Following" component={Following} /> 
             <Route path="/Library" component={Library} /> 
+            <Route path="/Uploads" exact component={Uploads} />
+            <Route path="/Uploads/Upload" component={Upload} />
           </Switch>
       </div>  
     </Router>
