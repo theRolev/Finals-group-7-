@@ -88,6 +88,7 @@ class Upload extends Component {
                         console.log(url);
                     });
             });
+        alert("File Uploaded")
         event.preventDefault()
     }
 
