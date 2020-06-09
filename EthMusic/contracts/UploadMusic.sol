@@ -4,35 +4,47 @@ contract UploadMusic {
 	struct Music{
 		string title;
 		string data;
+		string albumArt;
 		string description;
 		uint like;
-		bool available;
 	}
 	mapping (uint => address) idToOwner;
 	mapping (address => uint) musicCount;
 	Music[] musicArray;
 
-	// event Transfer(address indexed _from, address indexed _to, uint256 _value);
-
-	function uploadMusic(string memory _title, string memory _data, string memory _description) public {
-		uint id = musicArray.push(Music(_title, _data, _description, 0, true)) - 1;
+	function uploadMusic(string memory _title, string memory _data, string memory _albumArt, string memory _description) public {
+		uint id = musicArray.push(Music(_title, _data, _albumArt, _description, 0)) - 1;
 		idToOwner[id] = msg.sender;
         musicCount[msg.sender]++;
-		// emit Transfer(msg.sender, receiver, amount);
+	}
+	function getMusicByOwner(address _owner) external view returns(uint[] memory) {
+		uint[] memory result = new uint[](musicCount[_owner]);
+		uint counter = 0;
+		for (uint i = 0; i < musicArray.length; i++) {
+			if (idToOwner[i] == _owner) {
+				result[counter] = i;
+				counter++;
+			}
+		}
+		return result;
 	}
 	//mapping
-	function musicOwner(uint _id) public view returns(address) {
-		return idToOwner[_id];
-	}
-	function musicCount(address _address) public view returns(uint) {
-		return musicCount[_address];
-	}
+	// function musicOwner(uint _id) public view returns(address) {
+	// 	return idToOwner[_id];
+	// }
+	// function musicCount(address _address) public view returns(uint) {
+	// 	return musicCount[_address];
+	// }
+
 	//get
 	function getTitle(uint _id) public view returns(string memory) {
 		return musicArray[_id].title;
 	}
 	function getMusic(uint _id) public view returns(string memory) {
 		return musicArray[_id].data;
+	}
+	function getAlbumArt(uint _id) public view returns(string memory) {
+		return musicArray[_id].albumArt;
 	}
 	function getDescription(uint _id) public view returns(string memory) {
 		return musicArray[_id].description;
@@ -41,12 +53,11 @@ contract UploadMusic {
 	function changeTitle (uint _id, string memory _newTitle) public {
 		musicArray[_id].title = _newTitle;
 	}
+	function changeAlbumArt (uint _id, string memory _newAlbumArt) public {
+		musicArray[_id].albumArt = _newAlbumArt;
+	}
 	function changeDescription (uint _id, string memory _newDescription) public {
 		musicArray[_id].description = _newDescription;
-	}
-	function changeStatus (uint _id, uint _status) public {
-		if (_status == 1) {musicArray[_id].available = true;}
-		else if (_status == 0) {musicArray[_id].available = false;}
 	}
 	//like
 	function thumbsUp (uint _id) public {
