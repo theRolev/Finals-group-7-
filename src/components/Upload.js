@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Link } from 'react-router-dom';
+import { storage } from '../firebase'
 
 import "./css/Discover.css"
 import "./css/Tracks.css"
@@ -14,8 +14,8 @@ class Upload extends Component {
             artist: '',
             genre: '',
             date: '',
-            musicfile: null,
-            albumart:'',
+            musicFile: null,
+            albumArt: null,
         }
     }
 
@@ -45,24 +45,56 @@ class Upload extends Component {
 
     handleMusicFileChange = event => {
         this.setState({
-            musicfile: event.target.files
+            musicFile: event.target.files[0]
         })
     }
 
     handleAlbumArtChange = event => {
         this.setState({
-            albumart: event.target.files
+            albumArt: event.target.files[0]
         })
     }
 
     handleSubmit = event => {
-        
+        const uploadMusicFile = storage.ref(`${this.state.musicFile.name}/${this.state.musicFile.name}`).put(this.state.musicFile);
+        uploadMusicFile.on(
+            "state_changed",
+            snapshot => {},
+            error => {
+                console.log(error);
+            },
+            () => {
+                storage
+                    .ref(this.state.musicFile.name)
+                    .child(this.state.musicFile.name)
+                    .getDownloadURL()
+                    .then(url => {
+                        console.log(url);
+                    });
+            });
+        const uploadAlbumArt = storage.ref(`${this.state.musicFile.name}/${this.state.albumArt.name}`).put(this.state.albumArt);
+        uploadAlbumArt.on(
+            "state_changed",
+            snapshot => {},
+            error => {
+                console.log(error);
+            },
+            () => {
+                storage
+                    .ref(this.state.musicFile.name)
+                    .child(this.state.albumArt.name)
+                    .getDownloadURL()
+                    .then(url => {
+                        console.log(url);
+                    });
+            });
         event.preventDefault()
     }
 
     render() {
-        const linkStyle = {color:"transparent"}
-        const { title, artist, genre, date, musicfile, albumart} = this.state
+        const { title, artist, genre, date, albumArt, musicFile} = this.state
+        console.log("albumArt: ", albumArt)
+        console.log("musicFile: ", musicFile)
         return(
 			<div className="discover">
                 <form onSubmit={this.handleSubmit}>
@@ -103,15 +135,13 @@ class Upload extends Component {
                         <label>Music File: </label>
                         <input 
                         type='file' 
-                        value={musicfile} 
                         onChange={this.handleMusicFileChange}
                         />
                     </div>
                     <div>
                         <label>Album Art: </label>
                         <input 
-                        type='file' 
-                        value={albumart} 
+                        type='file'  
                         onChange={this.handleAlbumArtChange}
                         />
                     </div>
