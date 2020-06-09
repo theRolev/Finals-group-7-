@@ -93,8 +93,6 @@ class Upload extends Component {
 
     render() {
         const { title, artist, genre, date, albumArt, musicFile} = this.state
-        console.log("albumArt: ", albumArt)
-        console.log("musicFile: ", musicFile)
         return(
 			<div className="discover">
                 <form onSubmit={this.handleSubmit}>
