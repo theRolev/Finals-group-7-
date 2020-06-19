@@ -1,14 +1,94 @@
+.playback{
+    background-color: #EFE6F1;
+}
+
+.songInfo{
+    float:left;
+}
+
+.audioDiv{
+     float:right;
+     width:90%;
+     height: 100%;
+}
+
+.audioPlayer{
+    height:100%;
+}
+
+.title{
+    margin-left:7px;
+}
+
+.artist{
+    margin-left:7px;
+}
+.date{
+    margin-left:7px;
+}
+
+
+/*.playback {
+    height: 100%;
+    background-color: rgba(134, 59, 134, 0.055);
+    margin-right: 5%;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+    "title audioPlayer audioPlayer audioPlayer audioPlayer"
+    "artist audioPlayer audioPlayer audioPlayer audioPlayer"
+    "date audioPlayer audioPlayer audioPlayer audioPlayer";
+    font-family: Arial;
+    background-color: rgba(180, 138, 190, 0.219);
+}
+
+
+.audioPlayer{
+     grid-area: audioPlayer;
+}
+.title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    grid-area: title;
+    justify-self: start;
+    align-self: end;
+    padding-left: 2rem;
+    color: #333;
+}
+
+.artist{
+    font-weight: 400;
+    font-size: 0.7rem;
+    grid-area: artist;
+    justify-self: start;
+    align-self: center;
+    padding-left: 2rem;
+    color: rgba(51, 51, 51, 0.87);
+}
+
+.date {
+    font-weight: 400;
+    font-size: 0.6rem;
+    grid-area: date;
+    justify-self: start;
+    align-self: start;
+    padding-left: 2rem;
+    color: rgba(51, 51, 51, 0.767);
+}
+*/
+
+/*
 .box {
     display: grid;
     overflow: auto;
     height: 100%;
     width: 100%;
-    grid-template-columns: repeat(16, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
-    "titlea titlea titlea . . shuffle prev play play next repeat . . . . ."
-    "artista artista heart heart . shuffle prev play play next repeat . . volume . ."
-    "datea datea . . . . . . . . . . . volume . .";
+    "titlea "
+    "artista "
+    "datea ";
     font-family: Arial;
     background-color: rgba(180, 138, 190, 0.219);
 }
@@ -108,4 +188,4 @@
     align-self: center;
     padding-left: 2rem;
     color: rgba(51, 51, 51, 0.87);
-}
+}*/
