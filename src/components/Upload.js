@@ -95,8 +95,8 @@ class Upload extends Component {
     render() {
         const { title, artist, genre, date, albumArt, musicFile} = this.state
         return(
-			<div className="discover">
-                <form onSubmit={this.handleSubmit}>
+			<div className="mid">
+                <form onSubmit={this.handleSubmit} className="uploadForm">
                     <div>
                         <label>Title: </label>
                         <input 
@@ -114,6 +114,14 @@ class Upload extends Component {
                         />
                     </div>
                     <div>
+                        <label>Publish Date: </label>
+                        <input 
+                        type='text' 
+                        value={date} 
+                        onChange={this.handleDateChange}
+                        />
+                    </div>
+                    <div>
                         <label>Genre: </label>
                         <select value={genre} onChange={this.handleGenreChange}>
                             <option value="pop">Pop</option>
@@ -121,14 +129,6 @@ class Upload extends Component {
                             <option value="house">House</option>
                             <option value="trap">Trap</option>
                         </select>
-                    </div>
-                    <div>
-                        <label>Publish Date: </label>
-                        <input 
-                        type='text' 
-                        value={date} 
-                        onChange={this.handleDateChange}
-                        />
                     </div>
                     <div>
                         <label>Music File: </label>

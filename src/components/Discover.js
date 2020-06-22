@@ -20,9 +20,11 @@ function Discover () {
 		 />)
 
 	return(
-		<div className="discover">
-			<h1 className="catagory">Discover</h1>
-			{TrackLi}
+		<div className = "mid">
+			<div className="discover">
+				<h1>Discover</h1>
+				{TrackLi}
+			</div>
 		</div>
 	)
 }
